@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  database:
+    image: postgres:13
+    container_name: pg
+    environment:
+      POSTGRES_PASSWORD: secret
+    ports:
+      - '5432:5432'
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data:
